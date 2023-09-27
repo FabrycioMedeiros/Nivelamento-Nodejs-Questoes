@@ -1,0 +1,48 @@
+Perguntas Conceituais: NPM
+
+1.  O que é o npm e qual é a sua função principal no ecossistema Node.js?
+npm (Node Package Manager) é uma ferramenta fundamental no ecossistema Node.js, onde sua função principal é facilitar a instalação, gerenciamento e distribuição de pacotes de software (bibliotecas e módulos) escritos em JavaScript. 
+
+2.	Como você verifica a versão atual do npm instalada no seu sistema?
+No terminal ou prompt de comando e digite o seguinte comando:
+npm -v 
+Que será exibida a versão instalada no sistema.
+
+3.	Qual é o comando utilizado para instalar pacotes npm em um projeto Node.js?
+No terminal inicie com o comando:
+npm install nomeDoPacote - Para instalar um pacote de terceiros, isso baixará o pacote e suas dependências para a pasta node_modules no seu projeto.
+npm install nomeDoPacote --save ou npm install nomeDoPacote –S - Para salvar a dependência, para que outras pessoas que trabalham no projeto possam instalá-la facilmente. 
+
+4.	Como você lista todos os pacotes instalados em um projeto Node.js?
+É utilizado o comando, no terminal:
+npm list
+
+5.	O que é o arquivo package.json e qual é o seu propósito em um projeto Node.js?
+É um arquivo de configuração fundamental em um projeto Node.js, que desempenha papel central no gerenciamento de dependências, configuração do projeto e na documentação das informações relacionadas ao projeto, descrevendo suas particularidades temos:.
+Gestão de Dependências - Uma das funções mais importantes do package.json é listar todas as dependências do projeto. Isso inclui pacotes npm que o projeto utiliza para funcionar corretamente. 
+Scripts Personalizados - Podemos definir scripts personalizados que automatizam tarefas comuns relacionadas ao projeto, como a execução de testes, a compilação de código, a inicialização de servidores, entre outros. 
+Metadados do Projeto - Contém metadados do projeto, como o nome do projeto, a versão, uma descrição, o autor e informações de licença. 
+Configuração do Projeto - Pode incluir configurações específicas do projeto, como variáveis de ambiente, configurações de construção ou qualquer outra informação necessária para executar o projeto em diferentes ambientes.
+Resolução de Conflitos de Versão - Também pode incluir informações sobre como as dependências devem ser tratadas em termos de versão. 
+Facilitação de Compartilhamento e Colaboração - Torna mais fácil compartilhar seu projeto com outros desenvolvedores. 
+
+6.	Quais são as diferenças entre os comandos npm install e npm install --save?
+npm install nomeDoPacote 
+•	comando usado para instalar pacotes npm em um projeto.
+•	Os pacotes são instalados na pasta node_modules do projeto, mas o arquivo package.json não é atualizado automaticamente.
+•	As dependências instaladas não são adicionadas automaticamente à lista de dependências do projeto no arquivo package.json.
+
+npm install nomeDoPacote --save ou npm install nomeDoPacote –S(forma abreviada) 
+•	É usado para instalar pacotes npm em um projeto.
+•	Os pacotes são instalados na pasta node_modules, e o arquivo package.json é atualizado automaticamente para incluir o pacote como uma dependência do projeto.
+•	As dependências instaladas são adicionadas automaticamente à lista de dependências do projeto no arquivo package.json.
+Obs: A partir do npm versão 5.0.0 e superior, a opção --save não é mais necessária, é feita a inclusão automática das dependências no package.json por padrão quando você simplesmente usa o npm install package-name.
+
+7.	Como você remove um pacote específico que não é mais necessário em um projeto Node.js?
+npm uninstall nomeDoPacote - Para remover um pacote específico que não é mais necessário em um projeto.
+npm uninstall nomeDoPacote --save - Para remover o pacote e também atualizar automaticamente o arquivo package.json.
+
+8.	O que é um pacote global npm e como você instala um pacote globalmente?
+É um pacote instalado no nível do sistema, e não em um projeto Node.js específico, são geralmente ferramentas e utilitários que disponibilizam globalmente no seu sistema para uso em vários projetos ou para executar comandos diretamente a partir do terminal ou prompt de comando..
+Para instalar um pacote global, usamos o comando:
+ npm install -g (ou npm install --global) nomeDoPacote
