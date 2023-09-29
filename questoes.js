@@ -9,24 +9,24 @@ const rl = readline.createInterface({
 });
 
 //Criação de objeto para armazenar perguntas e respostas.
-const perguntasERespostas = {};
+const questionAndAnswer = {};
 
 
 // Função para armazenar perguntas e respostas
-function adicionarPerguntaResposta(pergunta, resposta) {
-  perguntasERespostas[pergunta] = resposta;
+function addQuestionAnswer(question, answer) {
+  questionAndAnswer[question] = answer;
 }
 
 
 //Função para buscar uma resposta com relação a uma pergunta.
-function buscarResposta(pergunta) {
-  return perguntasERespostas[pergunta] || "Pedimos desculpas pelo ocorrido, mas ainda não possuímos o armazenamento destas informações em nosso sistema.";
+function searchAnswer(question) {
+  return questionAndAnswer[question] || "Pedimos desculpas pelo ocorrido, mas ainda não possuímos o armazenamento destas informações em nosso sistema.";
 }
 
-adicionarPerguntaResposta("O que é NodeJS?", "É um ambiente de software livre de runtime do JavaScript do lado do servidor, onde podemos usá-lo para executar aplicativos e código JavaScript em muitos locais fora de um navegador, como em um servidor. É um wrapper(classes especiais que possuem métodos capazes de fazer conversões em variáveis primitivas e também de encapsular tipos primitivos para serem trabalhados como objetos) em um mecanismo JavaScript chamado V8 que ativa vários navegadores, incluindo o Google Chrome, o Opera e o Microsoft Edge. Podemos usar o Node.js para executar JavaScript usando o mecanismo V8 fora de um navegador, também contém muitas otimizações do V8 das quais os aplicativos em execução em um servidor podem precisar. Como exemplo, adicionar uma classe de Buffer que permite que o V8 funcione com arquivos.");
+addQuestionAnswer("O que é NodeJS?", "É um ambiente de software livre de runtime do JavaScript do lado do servidor, onde podemos usá-lo para executar aplicativos e código JavaScript em muitos locais fora de um navegador, como em um servidor. É um wrapper(classes especiais que possuem métodos capazes de fazer conversões em variáveis primitivas e também de encapsular tipos primitivos para serem trabalhados como objetos) em um mecanismo JavaScript chamado V8 que ativa vários navegadores, incluindo o Google Chrome, o Opera e o Microsoft Edge. Podemos usar o Node.js para executar JavaScript usando o mecanismo V8 fora de um navegador, também contém muitas otimizações do V8 das quais os aplicativos em execução em um servidor podem precisar. Como exemplo, adicionar uma classe de Buffer que permite que o V8 funcione com arquivos.");
 
-rl.question("Faça uma pergunta: ", (pergunta) => {
-  const resposta = buscarResposta(pergunta);
-  console.log(resposta);
+rl.question("Faça uma pergunta: ", (question) => {
+  const answer = searchAnswer(question);
+  console.log(answer);
   rl.close();
 });
