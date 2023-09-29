@@ -1,9 +1,16 @@
-1.  O que é NodeJS? 
+Question 1
+1.  O que é NodeJS?
+Answer 1 
   É um ambiente de software livre de runtime do JavaScript do lado do servidor, onde podemos usá-lo para executar aplicativos e código JavaScript em muitos locais fora de um navegador, como em um servidor. É um wrapper(classes especiais que possuem métodos capazes de fazer conversões em variáveis primitivas e também de encapsular tipos primitivos para serem trabalhados como objetos) em um mecanismo JavaScript chamado V8 que ativa vários navegadores, incluindo o Google Chrome, o Opera e o Microsoft Edge. Podemos usar o Node.js para executar JavaScript usando o mecanismo V8 fora de um navegador, também contém muitas otimizações do V8 das quais os aplicativos em execução em um servidor podem precisar. Como exemplo, adicionar uma classe de Buffer que permite que o V8 funcione com arquivos.
+
+Question 2
 2.  Em que linguagem o Node.js é principalmente escrito?
+Answer 2
 	Escrito principalmente em JavaScript, Node.js é uma plataforma de tempo de execução de JavaScript que permite aos desenvolvedores executar código JavaScript no lado do servidor.  No entanto, a maior parte do código do Node.js que fornece funcionalidades e recursos para os desenvolvedores também é escrito em C++ para otimização de desempenho. Mas também podem envolver o uso de outras linguagens de programação, dependendo das necessidades específicas do desenvolvimento e das bibliotecas externas utilizadas como Assembly, em casos de otimização extrema, algumas partes críticas do Node.js podem ser escritas para obter o máximo desempenho possível, em Rust, em alguns módulos ou bibliotecas do Node.js podem ser escritos para melhorar a segurança ou desempenho em determinados cenários, em C, algumas partes podem ser escritas em C, especialmente quando se trata de integração com sistemas e APIs de baixo nível que são mais facilmente acessados a partir de desta linguagem e Java, onde em casos raros, algumas extensões ou módulos podem ser escritos, especialmente quando há necessidade de interagir com sistemas legados que dependem dessa linguagem.
 
+Question 3
 3.	Qual é a principal finalidade do Node.js?
+Answer 3
 A principal finalidade é permitir a execução de códigos JavaScript no lado do servidor, sendo fundamental para desenvolver aplicativos de rede e servidor altamente escaláveis e de alto desempenho. Há também mais finalidades tais como:
 •	Desenvolvimento de Servidores Web
 •	APIs RESTful
@@ -14,13 +21,19 @@ A principal finalidade é permitir a execução de códigos JavaScript no lado d
 •	Aplicações de Alto Desempenho
 •	Aplicativos de Internet das Coisas (IoT)
 
+Question 4
 4.	Como você executa um programa Node.js no seu computador?
+Answer 4
 Para sua execução, é preciso que o Node.js esteja instalado na maquina, com a versão apropriada para seu sistema operacional, crie um arquivo JS que contenha o código que deseja executar no editor de código, abra um terminal e digite o comando “node nomedoarquivo.js” e será apresentada a saída do código.
 
+Question 5
 5. O que é um servidor web e qual é a relação do Node.js com servidores web?
+Answer 5
 Servidor web é um software responsável por atender a solicitações HTTP (Hypertext Transfer Protocol) de clientes, como navegadores da web, e fornecer as respostas adequadas que geralmente consistem em páginas da web, arquivos, dados ou outros recursos que são solicitados pelos clientes, Node.js é uma plataforma de tempo de execução JavaScript que permite aos desenvolvedores criar aplicativos do lado do servidor, sua relação com o Node.js e servidores web está no fato de que ele pode ser usado para criar servidores web altamente eficientes e escaláveis, permite que os desenvolvedores usem JavaScript tanto no lado do cliente (navegador) quanto no lado do servidor, tornando mais fácil para os desenvolvedores usarem a mesma linguagem de programação em ambos os lados, simplificando o desenvolvimento e a manutenção de aplicativos da web, inclui um módulo HTTP que permite criar facilmente um servidor web, podendo criar servidores web personalizados e definir como eles devem responder a solicitações HTTP, oferecendo um alto grau de flexibilidade para a construção de aplicativos da web, assincronicidade, pois é construído com uma arquitetura orientada a eventos e é altamente assíncrona, pois pode lidar com um grande número de conexões simultâneas sem bloquear a execução de outras operações, possui também um ecossistema de pacotes extremamente rico, graças ao npm (Node Package Manager), que facilita a incorporação de bibliotecas e módulos de terceiros em aplicativos Node.js, acelerando o desenvolvimento, e é conhecido por seu desempenho e escalabilidade, pois é particularmente eficiente em situações onde a latência é crítica, como em aplicativos da web em tempo real.
 
+Question 6
 6. Como você instala pacotes de terceiros em um projeto Node.js?
+Answer 6
 Abra um terminal, execute o seguinte comando para criar um arquivo package.json que manterá o registro dos pacotes que você irá instalar e digite:
 
 npm init
@@ -37,15 +50,21 @@ Para manter um registro dos pacotes que estão sendo utilizados digitamos:
 
 npm install express –save  ou  npm install express -S
 
+Question 7
 7. O que é um módulo no contexto do Node.js?
+Answer 7
 Módulo é um arquivo JavaScript individual que contém código reutilizável e funcionalidades específicas, são parte fundamental da arquitetura de módulos do Node.js e são usados para organizar e estruturar o código em projetos de forma modular, o que ajuda a manter o código organizado, legível e reutilizável.
 
-8. Qual é a diferença entre variáveis locais e globais em Node.js?           
+Question 8
+8. Qual é a diferença entre variáveis locais e globais em Node.js?  
+Answer 8         
 Variáveis locais são aquelas declaradas dentro de uma função ou bloco de código específico e têm escopo limitado a esse contexto.
 
 Variáveis globais, são declaradas fora de qualquer função ou bloco e têm escopo global, o que significa que podem ser acessadas de qualquer lugar no código.
 
+Question 9
 9. O que é um callback em JavaScript e como ele é usado em Node.js?
+Answer 9
 É uma função que é passada como argumento para outra função e executada após a conclusão dessa função, permitindo que controle o fluxo do programa e realize ações após a conclusão de uma operação assíncrona, como leitura de arquivos, chamadas de API ou consultas de banco de dados.
 Abaixo um exemplo prático
 
@@ -69,7 +88,9 @@ console.log('Lendo o arquivo...');
 
 Temos em fs.readFile uma função assíncrona que lê o conteúdo de um arquivo, que aceita um callback como seu terceiro argumento, quando a leitura do arquivo é concluída, o callback é chamado, caso ocorrera um erro durante a leitura do arquivo, o primeiro parâmetro do callback conterá o erro, caso contrário, o segundo parâmetro conterá os dados lidos do arquivo.
 
+Question 10
 10. Como você lida com erros simples em código Node.js?
+Answer 10
 Uso de callbacks de erro: Quando estamos lidando com funções assíncronas que podem gerar erros, é comum passar um callback de erro como o primeiro argumento para a função.
 Exemplo:
 
@@ -137,7 +158,9 @@ Log e notificação é importante registrar erros em logs para fins de depuraç�
 
 Tratamento específico de erros que dependendo do tipo de erro, podemos tomar ações específicas, como tentar novamente uma operação ou notificar um administrador do sistema.
 
+Question 11
 11.	O que é uma função assíncrona em Node.js e por que ela é útil?
+Answer 11
 É uma função que opera de forma assíncrona, significa que ela não bloqueia a execução do código enquanto aguarda a conclusão de uma operação demorada, como leitura de arquivos, chamadas de API, consultas a bancos de dados ou qualquer outra operação de I/O (entrada/saída), permitem que outras partes do programa continuem executando enquanto a operação assíncrona está em andamento, são úteis por varias razoes, tais como:
 
 ·  Desempenho: Funções assíncronas permitem que o programa continue respondendo a outras solicitações ou executando tarefas enquanto aguarda a conclusão de operações de I/O.
@@ -148,7 +171,9 @@ Tratamento específico de erros que dependendo do tipo de erro, podemos tomar a�
 
 ·  Melhor experiência do usuário: Em aplicativos da web, a capacidade de executar operações em segundo plano sem interromper a interação do usuário melhora a experiência do usuário, tornando a aplicação mais ágil.
 
+Question 12
 12.	Qual é a diferença entre o console.log() e o console.error() no Node.js?
+Answer 12
 console.log():
 
 O console.log() é usado para imprimir mensagens informativas ou de depuração no console.
