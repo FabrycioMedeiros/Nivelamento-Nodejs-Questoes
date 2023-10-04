@@ -1,0 +1,97 @@
+Perguntas Conceituais HTTP:
+
+1.	O que é o HTTP e qual é o seu papel fundamental na internet?
+HTTP (Hypertext Transfer Protocol) é um protocolo de comunicação utilizado para a transferência de dados na World Wide Web (WWW) e em outras aplicações de hipermídia, desempenha um papel fundamental na Internet como o protocolo que permite que os navegadores da web solicitem e recebam recursos, como páginas da web, imagens, vídeos e outros tipos de conteúdo, de servidores web.
+
+2.	Qual é a diferença entre o HTTP e o HTTPS?
+Ambos são protocolos usados para transferir dados entre um cliente (geralmente um navegador da web) e um servidor web, mas o HTTPS (Hypertext Transfer Protocol Secure) incorpora camadas de segurança adicionais que o HTTP não oferece, tais como:
+•	HTTP
+I.	Não possui segurança, pois as informações transferidas através do HTTP não são criptografadas, o que significa que podem ser interceptadas e lidas por terceiros mal-intencionados, tornando-as vulneráveis a ataques, como interceptação de dados.
+II.	Não verifica a autenticidade do servidor, sendo mais suscetível a ataques de phishing e a possibilidade de se comunicar com um servidor falso.
+III.	Os navegadores geralmente não indicam explicitamente a segurança das páginas, onde informações são transmitidas sem ícone de cadeado ou outra sinalização de segurança.
+IV.	Mecanismos de busca tendem a penalizar sites que utilizam apenas o protocolo HTTP em suas classificações.
+•	HTTPS 
+I.	Utiliza criptografia SSL/TLS (Secure Sockets Layer/Transport Layer Security) para proteger as comunicações entre o cliente e o servidor, garantindo que os dados transferidos sejam criptografados e não possam ser facilmente interceptados ou lidos por partes não autorizadas.
+II.	Inclui a autenticação do servidor por meio de certificados digitais emitidos por autoridades certificadoras confiáveis. 
+III.	Os navegadores exibem indicadores visuais de segurança, como um ícone de cadeado e "https://" na barra de endereço.
+IV.	Sites que utilizam o HTTPS tendem a ter uma classificação de pesquisa mais alta, pois os mecanismos de busca favorecem sites seguros.
+
+3.	Como funciona o modelo cliente-servidor no contexto do HTTP?
+Neste modelo, a interação entre os componentes da rede é dividida em dois papéis principais: o cliente e o servidor:
+ O Cliente - é o dispositivo ou software que solicita recursos ou serviços de um servidor na web, o cliente mais comum é um navegador da web, como o Google Chrome, Mozilla Firefox ou Safari, existem também aplicativos da web em dispositivos móveis que atuam como clientes HTTP. O cliente inicia a comunicação enviando uma solicitação HTTP a um servidor para obter um recurso específico, como uma página da web, uma imagem, um vídeo ou um arquivo de dados, a solicitação HTTP do cliente inclui informações, como o método de solicitação (por exemplo, GET, POST), a URL (Uniform Resource Locator) que identifica o recurso desejado e outros cabeçalhos opcionais que fornecem detalhes adicionais, como as preferências do cliente.
+O Servidor - é o dispositivo ou software que recebe as solicitações HTTP dos clientes e fornece os recursos solicitados, um exemplo comum de servidor HTTP, ele processa a solicitação HTTP recebida do cliente, identifica o recurso solicitado com base na URL e toma as medidas necessárias para atender à solicitação, depois de processar a solicitação, o servidor envia uma resposta HTTP de volta ao cliente, esta resposta inclui informações sobre o resultado da solicitação, bem como o recurso solicitado, se aplicável.
+A troca de dados na comunicação entre o cliente e o servidor é baseada em troca de mensagens HTTP, onde ao envio do cliente de uma solicitação HTTP ao servidor, que responde com uma mensagem HTTP contendo o recurso solicitado e um código de status que indica se a solicitação foi bem-sucedida ou não, estas mensagens podem incluir dados adicionais, como cookies, cabeçalhos de resposta, informações de autenticação e muito mais, dependendo das necessidades da solicitação e da resposta.
+Outra ocorrência, é a de permitir que as interações entre cliente e servidor sejam assíncronas, o que significa que o cliente não precisa esperar pela resposta do servidor antes de continuar a interagir com a página ou aplicativo, sendo fundamental para criar interfaces de usuário web responsivas e dinâmicas.
+
+4.	O que é uma URL (Uniform Resource Locator) e como ela se relaciona com o HTTP?
+URL é um formato padrão para especificar a localização de recursos na Internet, é uma sequência de caracteres que fornece informações sobre como acessar um recurso específico, como uma página da web, um arquivo, um serviço ou qualquer outro tipo de recurso online, são essenciais para a identificação e a localização de recursos na web, e elas desempenham um papel fundamental no contexto do HTTP,  e se relaciona com o HTTP através dos seguintes parâmetros:
+•	Scheme - Parte inicial de uma URL que especifica o protocolo a ser usado para acessar o recurso. 
+•	Domain Name - É o endereço da web que identifica um servidor específico onde o recurso está hospedado.
+•	Port - É um número opcional que segue o nome de domínio e é separado por dois pontos, que especifica a porta de rede a ser usada para a comunicação com o servidor. O HTTP padrão usa a porta 80, enquanto o HTTPS usa a porta 443.
+•	Path -  É a parte da URL que especifica a localização precisa do recurso no servidor.
+•	Query String - É uma parte opcional da URL que permite passar parâmetros ou dados adicionais para o servidor.
+•	Fragment - É outra parte opcional da URL que permite especificar um ponto específico dentro do recurso.
+
+5.	Qual é a diferença entre um navegador web e um servidor web em relação ao HTTP?
+Navegador Web:
+Navegador web é um software utilizado pelos usuários para acessar e visualizar recursos na Internet, como páginas da web, imagens, vídeos e outros tipos de conteúdo, atua como um cliente HTTP que envia solicitações para servidores web e exibe as respostas recebidas, oferecem uma interface de usuário gráfica que permite que os usuários interajam com a web de forma amigável e visual, exibem o conteúdo das páginas da web e fornecem recursos de navegação, interpretam o código HTML, CSS e JavaScript das páginas da web para renderizar e exibir o conteúdo de forma legível e interativa para os usuários e implementam medidas de segurança, como a exibição de indicadores visuais para sites seguros (HTTPS), bloqueio de conteúdo malicioso e alertas de segurança, para proteger os usuários enquanto navegam na web.
+Servidor Web:
+Servidor web é um software ou hardware que hospeda recursos na Internet e responde às solicitações HTTP dos clientes (navegadores web), que armazenam e entregam conteúdo, como páginas da web, imagens, arquivos de dados, sua armazenagem de recursos (arquivos) são organizados em diretórios e pastas no servidor, quando recebem uma solicitação HTTP de um cliente, ele processa a solicitação, determina o recurso solicitado com base na URL e envia uma resposta HTTP correspondente, que inclui o recurso solicitado ou informações sobre o resultado da solicitação, são projetados para entender e atender às solicitações e respostas HTTP, são configurados para ouvir em portas específicas (geralmente 80 para HTTP e 443 para HTTPS) e aguardam solicitações de clientes, também projetados para lidar com um grande número de solicitações HTTP de clientes simultâneos, garantindo que os recursos estejam disponíveis e acessíveis de forma eficiente e implementam medidas de segurança, como firewalls, configurações de acesso restrito e atualizações regulares para proteger os recursos e a integridade dos dados armazenados.
+
+6.	O que são os métodos HTTP GET e POST e qual é a sua finalidade?
+São métodos utilizados para interação com o servidor, o método GET é usado para solicitar recursos do servidor, como páginas da web, e os dados são visíveis na URL, já o método POST é usado para enviar dados ao servidor, como formulários, os dados são enviados no corpo da solicitação, tornando-os mais seguros e adequados para informações confidenciais.
+O método GET é usado principalmente para solicitar recursos específicos de um servidor web, quando o cliente deseja recuperar informações do servidor, como uma página da web, uma imagem, um arquivo de dados, ou quando deseja executar uma consulta de pesquisa.
+O método POST é usado para enviar dados ao servidor para processamento, é apropriado para situações em que o cliente deseja enviar informações que não devem ser visíveis na URL, como dados de formulário em um site de login, informações de pagamento em um carrinho de compras ou conteúdo de um formulário da web.
+
+7.	Como o HTTP lida com a comunicação entre o cliente e o servidor?
+Solicitação do Cliente - Por meio de um modelo de solicitação e resposta, este protocolo define como os dados são transferidos entre esses dois componentes da web, de uma forma geral temos que, a comunicação geralmente começa quando um cliente, com um navegador da web, deseja acessar um recurso na Internet, com uma página da web, este cria uma solicitação HTTP para o servidor que hospeda o recurso desejado, a solicitação HTTP inclui várias informações importantes, como, método de solicitação (GET, POST, PUT, DELETE) que indica a ação que o cliente deseja realizar no servidor, a  URL que identifica o recurso específico que o cliente deseja acessar. Cabeçalhos de solicitação opcionais que fornecem informações adicionais, como informações de autenticação, preferências de linguagem, tipos de conteúdo suportados e muito mais e possivelmente, um corpo de mensagem que contém dados a serem enviados ao servidor (geralmente utilizando em solicitações POST ou PUT para enviar dados, como formulários).
+Processamento no Servidor - O servidor recebe a solicitação HTTP do cliente que a processa, examina a URL e os cabeçalhos para entender o que o cliente está pedindo, com base na solicitação, o servidor executa a ação apropriada, que pode incluir buscar um arquivo, acessar um banco de dados, processar dados de um formulário, gerar dinamicamente uma página da web, prepara uma resposta HTTP para enviar de volta ao cliente.
+Resposta HTTP do servidor -  Contém informações como código de status HTTP, que indica se a solicitação foi bem-sucedida, redirecionada, encontrou um erro, cabeçalhos de resposta que fornecem informações adicionais sobre a resposta, como tipo de conteúdo, data de modificação, comprimento do conteúdo e o corpo da mensagem, que contém o recurso solicitado ou os dados gerados pelo servidor.
+Entrega ao Cliente - O servidor envia a resposta HTTP de volta ao cliente, que a recebe e a interpreta, geralmente através de um navegador da web, que processa a resposta e exibe o conteúdo ao usuário, podendo incluir renderização de páginas HTML, exibição de imagens, reprodução de vídeos, processamento de scripts JavaScript, etc.
+Comunicação Assíncrona - Significa que o cliente não precisa esperar pela resposta do servidor antes de continuar interagindo com a página ou aplicativo, isso permite que a web seja responsiva e dinâmica, com a capacidade de carregar partes da página à medida que são necessárias, em vez de carregar a página inteira a cada interação.
+
+8.	O que são cabeçalhos HTTP e qual é a sua importância nas solicitações e respostas HTTP?
+São componentes cruciais das solicitações e respostas HTTP, são metadados em formato de pares chave-valor que fornecem informações adicionais sobre a solicitação ou resposta, permitindo que o cliente e o servidor comuniquem detalhes importantes sobre a transação e desempenham um papel fundamental na troca de dados e no controle da comunicação entre o cliente e o servidor. 
+Sua importância em Solicitações HTTP:
+•	Identificação e Autenticação: Podem conter informações de identificação, como cookies ou tokens de autenticação, que permitem ao servidor reconhecer o cliente e determinar se ele está autorizado a acessar o recurso solicitado.
+•	Preferências do Cliente: Podem incluir informações sobre as preferências do cliente, como idioma preferido, tipos de conteúdo suportados e configurações de cache. Isso permite ao servidor adaptar a resposta às preferências do cliente, quando apropriado.
+•	Dados da Solicitação: Podem transportar dados sobre a solicitação em si, como informações sobre o método de solicitação (GET, POST), os tipos de conteúdo aceitos pelo cliente, informações de referência.
+•	Controle de Cache: Cache-Control e If-Modified-Since permitem ao cliente e ao servidor controlar o armazenamento em cache de recursos, melhorando a eficiência da comunicação e reduzindo a carga no servidor.
+Sua importância em Respostas HTTP:
+•	Código de Status: Status (ou Status-Line) na resposta HTTP inclui um código de status que indica o resultado da solicitação. Isso informa ao cliente se a solicitação foi bem-sucedida (código 200), se houve uma redireção (código 302), se ocorreu um erro (código 404 para "não encontrado", por exemplo), etc.
+•	Tipo de Conteúdo: Content-Type especifica o tipo de conteúdo da resposta, como texto HTML, imagem JPEG, JSON, XML etc. Permitindo que o cliente saiba como interpretar e exibir o conteúdo da resposta.
+•	Controle de Cache: Cache-Control, Expires, e Last-Modified controlam como o conteúdo deve ser armazenado em cache no cliente ou em servidores intermediários (como proxies), afetando o desempenho e a eficiência da comunicação.
+•	Redirecionamento: Indicam ao cliente para onde deve ser redirecionado após uma solicitação bem-sucedida, o que é útil para redirecionar para uma nova página após o login, por exemplo.
+•	Segurança: Ajudam a proteger a comunicação por meio de criptografia HTTPS, enquanto outros podem fornecer informações de segurança, como políticas de segurança de conteúdo (Content-Security-Policy).
+•	Cookies: Set-Cookie e Cookie são usados para gerenciar sessões e armazenar informações no lado do cliente, permitindo que o servidor mantenha o estado entre solicitações.
+
+9.	Explique o conceito de estado (state) no contexto do protocolo HTTP.
+State no contexto do protocolo HTTP refere-se à capacidade de manter informações sobre a interação atual entre um cliente e um servidor web ao longo de várias solicitações e respostas. O HTTP é um protocolo "sem estado" por natureza, o que significa que cada solicitação HTTP é tratada independentemente, sem que o servidor retenha informações sobre solicitações anteriores, no entanto, para muitas aplicações web, é necessário manter algum tipo de estado para rastrear ações do usuário, autenticação, preferências e outros dados durante uma sessão.
+
+10.	Qual é o papel dos códigos de status HTTP (como 200, 404 e 500) e o que eles indicam?
+	São números de três dígitos retornados pelo servidor web em uma resposta HTTP para indicar o resultado da solicitação feita pelo cliente, que desempenham papel fundamental na comunicação entre o cliente e o servidor, fornecendo informações sobre o estado da solicitação. 
+200 Código Status OK - indica que a solicitação foi bem-sucedida, que o servidor atendeu com sucesso à solicitação do cliente e enviou os dados solicitados na resposta.
+404 Código de Status Not Found - indica que o recurso solicitado não foi encontrado no servidor, comumente usado para indicar que uma página da web ou um recurso não existe.
+500 Código de Status Internal Server Error - indica que ocorreu um erro interno no servidor ao processar a solicitação, pode ser devido a problemas de configuração, falhas de software ou outras condições que afetam o servidor.
+
+11.	O que é uma sessão HTTP e como ela difere de um cookie?
+    Sessão HTTP é uma maneira de manter o estado de uma interação entre um cliente e um servidor web ao longo de várias solicitações e respostas, usada para rastrear a continuidade da interação, lembrando informações sobre o cliente e a sessão no lado do servidor.
+	Cookie é um pequeno fragmento de dados que um servidor web envia ao navegador do cliente, e o navegador armazena esse dado localmente, são frequentemente usados para rastrear informações sobre o cliente e a sessão no lado do cliente.
+	Suas principais diferenças são:
+
+•	Local de Armazenamento - As sessões HTTP armazenam informações no lado do servidor, enquanto os cookies armazenam informações no lado do cliente.
+•	Duração - As sessões geralmente têm uma duração definida pela configuração do servidor e podem expirar quando o cliente fecha o navegador ou após um período de inatividade, enquanto os cookies podem ter datas de expiração específicas ou ser persistentes (armazenados por um longo período).
+•	Capacidade de Armazenamento - Os cookies têm limitações de tamanho, enquanto as sessões no lado do servidor podem armazenar uma quantidade maior de informações.
+•	Segurança -  Como as informações da sessão são armazenadas no servidor, elas são mais seguras em termos de privacidade e proteção contra manipulações, enquanto os cookies podem ser acessados e, potencialmente, manipulados pelo cliente.
+
+12.	Como o HTTP lida com a autenticação e a segurança das informações transmitidas pela web?
+	Utilizando técnicas e protocolos, segurança é uma preocupação crítica na comunicação online, pois proteger informações sensíveis e autenticar usuários é essencial para garantir a privacidade e a integridade dos dados. São algumas das principais maneiras de autenticação e a segurança:
+HTTPS - É uma extensão do HTTP que adiciona uma camada de segurança à comunicação por meio de criptografia, utiliza o protocolo SSL/TLS (Secure Sockets Layer/Transport Layer Security) para criptografar os dados transmitidos entre o cliente e o servidor, impedindo que terceiros interceptem ou adulterem os dados durante a transmissão.
+Autenticação de Usuário - Permite a implementação de autenticação de usuário por meio de várias técnicas, como cookies de sessão, tokens de autenticação (como tokens JWT), autenticação de formulário e autenticação baseada em cabeçalhos (como a autenticação Bearer no OAuth).
+Cabeçalhos de Segurança - Usando cabeçalhos de segurança para controlar como os navegadores e servidores devem se comportar em relação à segurança.
+Cookies Seguros – Estes só serão transmitidos por meio de conexões HTTPS, aumentando a segurança dos dados de sessão.
+Autorização e Controle de Acesso - Além da autenticação, lida com autorização e controle de acesso usando cabeçalhos de autorização, tokens e sistemas de controle de acesso baseados em funções.
+Criptografia de Conteúdo - É possível criptografar o próprio conteúdo do aplicativo ou da página da web, protegendo-o contra acesso não autorizado no lado do cliente.
+Monitoramento e Registro - Servidores podem registrar eventos de segurança, como tentativas de acesso não autorizado ou atividades suspeitas, para fins de auditoria e monitoramento de segurança.
+Práticas de Desenvolvimento Seguro - Aplicativos web devem seguir práticas recomendadas de segurança, como a validação adequada de entrada de dados, a proteção contra injeção de SQL e a autenticação forte.
+Atualizações e Patches: Manter os servidores HTTP e outras partes do ecossistema web atualizados com as correções de segurança mais recentes é fundamental para evitar vulnerabilidades conhecidas.
