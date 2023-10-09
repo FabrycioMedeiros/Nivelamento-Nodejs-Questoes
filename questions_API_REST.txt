@@ -1,0 +1,97 @@
+Perguntas Conceituais API REST:
+
+1.	O que significa a sigla "REST" em APIs REST?
+REST - Representational State Transfer, é um estilo arquitetural criado por Roy Fielding em sua tese de doutorado(2000). Consiste em um conjunto de princípios e restrições de design para criar serviços web que são escaláveis, simples, e que funcionam bem em arquitetura web, suas principais características são:
+•	Resources - Dados são modelados como recursos, que são identificados por URLs.
+•	Verbos HTTP - Operações sobre recursos são mapeadas para os métodos HTTP, como GET (para recuperar dados), POST (para criar dados), PUT (para atualizar dados) e DELETE (para excluir dados).
+•	Representational State - Recursos podem ser representados em vários formatos, como JSON ou XML, cada representação contém todos os dados necessários para modificar ou reconstruir o estado do recurso.
+•	Comunicação Stateless - Cada solicitação do cliente para o servidor deve conter todas as informações necessárias para entender e processar a solicitação, onde o servidor não mantém um estado da sessão do cliente entre as solicitações.
+•	Layered System - Sistemas REST podem ser compostos por várias camadas, onde cada camada realiza uma função específica, aumentando a escalabilidade e a flexibilidade da arquitetura.
+
+2.	Qual é o protocolo de comunicação mais comum usado em APIs REST?
+O Protocolo HTTP é amplamente utilizado para a comunicação entre clientes, como navegadores web, aplicativos móveis, etc. e servidores web, sendo um protocolo baseado em texto, definindo um conjunto de métodos para que os clientes solicitem recursos ou informações para que os servidores respondam a essas solicitações.
+
+3.	O que é um recurso em uma API REST e como ele é representado?
+É uma entidade de dados ou um objeto que pode ser acessado e manipulado por meio das operações HTTP, como GET, POST, PUT e DELETE, são os principais elementos que uma API REST expõe para que os clientes possam interagir com eles, podem ser qualquer coisa que faça sentido para o seu domínio de aplicação, como uma aplicação de gerenciamento de tarefas, onde os recursos podem incluir tarefas, projetos, usuários e assim por diante. Em uma aplicação de comércio eletrônico, os recursos podem incluir produtos, pedidos, carrinhos de compras e clientes, e a forma como esse recurso é apresentado quando recuperado ou manipulado por meio de uma solicitação HTTP, onde geralmente, as representações de recursos são formatadas em JSON ou XML, mas outros formatos podem ser usados, dependendo dos requisitos da API.
+Exemplo:
+{
+  "id": 1,
+  "titulo": "Concluir atividade",
+  "descricao": "Respostas de questões teóricas",
+  "status": "pendente"
+}
+
+4.	Quais são os principais métodos HTTP usados em APIs REST e quais são suas finalidades?
+GET: Usado para recuperar dados ou informações de um recurso existente, não deve ter efeitos colaterais no servidor e deve ser seguro e idempotente, o que significa que fazer a mesma solicitação GET várias vezes não deve alterar o estado do servidor ou dos recursos.
+POST: Usado para criar um novo recurso no servidor, geralmente, o corpo da solicitação contém os dados que serão usados para criar o novo recurso, não é idempotente, o que significa que fazer a mesma solicitação POST várias vezes pode resultar em criação de recursos duplicados.
+PUT: Usado para atualizar um recurso existente ou criar um recurso se ele não existir, contém os dados atualizados do recurso, é idempotente.
+PATCH: Usado para parcialmente atualizar um recurso existente. O corpo da solicitação contém apenas as alterações que devem ser aplicadas ao recurso, em vez de substituí-lo completamente. É útil quando você deseja atualizar apenas uma parte de um recurso.
+DELETE: Usado para excluir um recurso existente no servidor, remove o recurso especificado e, normalmente, não tem corpo de solicitação.
+Ainda temos:
+OPTIONS: Usado para obter informações sobre as opções de comunicação disponíveis para um recurso.
+HEAD: Semelhante ao GET, mas usado para obter apenas os cabeçalhos da resposta, sem o corpo da resposta.
+TRACE: Usado principalmente para fins de depuração e diagnóstico. 
+CONNECT: Usado para abrir uma conexão de rede para o recurso identificado pela URI, geralmente para fins de túnel, como estabelecer uma conexão segura (SSL/TLS) por meio de um proxy.
+
+5.	Qual é a diferença entre uma solicitação (request) e uma resposta (response) em uma API REST?
+Request - A solicitação é enviada pelo cliente para o servidor para solicitar uma ação em um recurso específico ou para recuperar informações desse recurso, e é composta pelos seguintes elementos principais:
+•	Método HTTP: Indica a ação a ser realizada no recurso, como GET (recuperar dados), POST (criar um novo recurso), PUT (atualizar um recurso existente), DELETE (excluir um recurso) e outros.
+•	URI (Uniform Resource Identifier): Especifica o local do recurso alvo na API. É a URL que identifica o recurso.
+•	Cabeçalhos (Headers): Contêm informações adicionais sobre a solicitação, como tipo de conteúdo aceito, autenticação, idioma preferido e outros.
+•	Corpo (Body): Opcionalmente, contém dados enviados do cliente para o servidor, geralmente em solicitações POST ou PUT.
+Response - Enviada pelo servidor em resposta a uma solicitação do cliente. Ela contém os resultados da ação solicitada ou as informações solicitadas sobre o recurso, composta pelos seguintes elementos principais:
+•	Código de Status HTTP: Indica o resultado da solicitação, como 200 OK (solicitação bem-sucedida), 404 Not Found (recurso não encontrado), 201 Created (recurso criado com sucesso) e outros, ajudam a indicar o sucesso ou falha da solicitação.
+•	Cabeçalhos (Headers): Contêm informações adicionais sobre a resposta, como tipo de conteúdo, data de modificação, autenticação e outros.
+•	Corpo (Body): Contém os dados do recurso ou informações relevantes retornadas pelo servidor, o formato do corpo da resposta geralmente segue o formato especificado nos cabeçalhos.
+
+6.	O que é um endpoint ou rota em uma API REST e qual é a sua função?
+Refere-se a um URI (Uniform Resource Identifier) específico que representa um recurso ou um conjunto de recursos em um servidor, cada endpoint é associado a uma ação específica que pode ser executada nesse recurso, ou seja, é o caminho ou URL que usamos para acessar e interagir com um recurso na API REST. Tem a função de mapear uma solicitação HTTP (como GET, POST, PUT, DELETE) para uma ação específica em um recurso ou conjunto de recursos.
+
+7.	O que JSON? E o que ele representa no padrão REST
+JSON (JavaScript Object Notation) é um formato de dados leve, legível por humanos e fácil de ser interpretado por máquinas, amplamente utilizado para a troca de dados entre um servidor e um cliente ou entre diferentes componentes de software, tornando-se um formato popular em desenvolvimento web e na construção de APIs REST. Sua representação de recursos é representada em JSON, cada recurso é mapeado para um objeto JSON que contém os dados associados a esse recurso. 
+
+8.	Como você faz uma solicitação GET em uma API REST e o que você pode esperar receber como resposta?
+A solicitação pode ser feita como o exemplo abaixo:
+// Importação da biblioteca Axios
+const axios = require('axios'); 
+// UR ou URL do recurso que deseja acessar
+const apiUrl = 'https://api.example.com/recurso';
+
+// Solicitação GET
+axios.get(apiUrl)
+  .then((response) => {
+    
+    console.log('Dados recebidos:', response.data);
+  })
+  .catch((error) => {
+    console.error('Erro na solicitação GET:', error);
+  });
+// A resposta da API está no objeto - response.data
+Ao realizar a solicitação iremos receber a resposta que inclui os seguintes elementos principais:
+•	Código de Status HTTP;
+•	Headers;
+•	Body;
+
+9.	O que é um status code HTTP e qual é a importância dele em uma resposta da API REST?
+É um número de três dígitos que é incluído na resposta de um servidor web para indicar o resultado da solicitação HTTP feita pelo cliente, desempenham um papel fundamental na comunicação entre o cliente e o servidor em uma API REST, pois fornecem informações sobre o estado da solicitação e da resposta, são parte essencial do protocolo HTTP e são usados para indicar sucesso, erro ou outros estados específicos, são importantes pois mostram:
+Comunicação de Resultado: de forma clara e concisa o resultado da solicitação ao cliente; 
+Tomada de Decisão do Cliente: com base no status code recebido, o cliente pode tomar decisões apropriadas sobre como lidar com a resposta; 
+Padrões de Resposta: definem padrões comuns para respostas em APIs REST; 
+Diagnóstico de Problemas: Quando ocorre um erro, o status code pode fornecer informações sobre a natureza do problema. 
+Monitoramento e Registro: Os status codes são frequentemente usados para monitorar o desempenho de uma API e para registro de eventos. 
+
+10.	O que é querystrings de uma URL?
+É uma parte da URL que permite incluir parâmetros ou dados adicionais que são enviados ao servidor quando você faz uma solicitação HTTP, geralmente por meio do método GET, é opcional e é usada para transmitir informações específicas sobre a solicitação que não estão contidas no próprio caminho da URL. Começa após o ponto de interrogação “?” na URL e é composta por uma série de pares de chave-valor, separados por &, cada par de chave-valor na query string consiste em um nome de parâmetro (chave) e um valor associado.
+
+11.	O que é path params de uma URL?
+São segmentos de texto incorporados no próprio caminho (ou rota) da URL que são usados para transmitir dados ou informações específicas para o servidor em uma solicitação HTTP. São uma maneira de incluir valores dinâmicos na URL para que o servidor possa processar a solicitação com base nesses valores, são definidos diretamente na rota ou caminho da URL e são geralmente indicados por colchetes {} ou ângulos <> que envolvem o nome do parâmetro.
+
+12.	Explique o conceito de versionamento de API e por que é útil em desenvolvimento de software.
+Refere-se à prática de criar e manter versões diferentes de uma API para acomodar mudanças, melhorias e atualizações ao longo do tempo, sendo feito para garantir a compatibilidade e a continuidade das aplicações que dependem da API, mesmo quando as alterações são introduzidas na API subjacente, é muito útil em desenvolvimento de software por vários motivos como:
+Compatibilidade - À medida que uma API evolui, as mudanças podem ser introduzidas que quebram a compatibilidade com versões anteriores, permitindo que aplicativos existentes continuem funcionando com uma versão específica da API, evitando assim quebras de funcionalidade.
+Controle de Mudanças - Permite que os desenvolvedores controlem e planejem mudanças na API de maneira estruturada.
+Testes e Implantação Seguros - Com versões estáveis e documentadas da API, os desenvolvedores podem realizar testes de regressão e implantação segura de novas versões sem afetar aplicativos que dependem das versões anteriores.
+Documentação Clara - Cada versão pode ser documentada de forma clara e separada, o que ajuda os desenvolvedores a entender as mudanças e novos recursos disponíveis em cada versão.
+Suporte a Clientes Antigos - Algumas aplicações podem não ser atualizadas regularmente para usar a versão mais recente da API, o versionamento permite que esses clientes continuem a funcionar sem problemas.
+Flexibilidade e Experimentação - Os desenvolvedores têm a flexibilidade de experimentar novos recursos e funcionalidades sem afetar os clientes existentes.
+Políticas de Descontinuação - Quando uma API antiga precisa ser descontinuada, os desenvolvedores podem notificar os usuários com antecedência e fornecer um período de transição para a versão mais recente.
